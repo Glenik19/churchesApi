@@ -92,9 +92,5 @@ export async function DELETE({ params, request }) {
     await connection.execute('DELETE FROM church WHERE id = ?', [uuid]);
     await connection.end();
 
-    if (result.affectedRows === 0) {
-        return new Response(JSON.stringify({ error: "Church not found" }), { status: 404 });
-    }
-
     return new Response(null, { status: 204 });
 }
