@@ -27,9 +27,12 @@
 </style>
 
     <div class="container">
-        <h1>How to Create Your Own REST API</h1>
-        <p>
-            All API endpoints are defined in the <code>src/routes/api</code> folder.<br>
-            Start with the <a class="btn" href="/api/churche">Churches Overview</a>
-        </p>
+        <h1>CHURCHES IN ALBANIA</h1>
+        <div>
+			<p>
+				All API endpoints are defined in the <code>src/routes/api</code> folder.
+			</p>
+			<a class="btn" href="/api/churche">Churches Overview</a>
+		</div>
+		
     </div>
