@@ -28,7 +28,7 @@ async function auth(request) {
             });
         }
     const base64Credentials = auth.split(' ')[1];
-    const credentials = atob(base64Credentials);
+    const credentials = atob(base64Credentials);    
     const [username, password] = credentials.split(':');
         if (username !== BASIC_AUTH_USER || password !== BASIC_AUTH_PASSWORD) {
             return new Response(JSON.stringify({ message:'Access denied'}), {
@@ -89,7 +89,7 @@ export async function DELETE({ params }) {
     const connection = await createConnection();
     const { uuid } = params;
 
-    const [result] = await connection.execute('DELETE FROM church WHERE id = ?', [uuid]);
+    await connection.execute('DELETE FROM church WHERE id = ?', [uuid]);
     await connection.end();
 
     if (result.affectedRows === 0) {
